@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <h1>Fullstack Fiction Library</h1>
-      <h2>pulled from my Fullstack Fiction API</h2>
+      <h2>Pulled from my Fullstack Fiction API</h2>
         <LibraryList />
     </>
   )

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { OuterContainer } from './MyStyles';
 
 export const LibraryList = () => {
     const [libraryList, setLibraryList] = useState([]);
@@ -8,20 +9,22 @@ export const LibraryList = () => {
         const getList = async () => {
             const data = await fetch(url).then(response =>
                 response.json());
-                setLibraryList(data);
+            setLibraryList(data);
         }
         getList();
     }, []);
 
     return (
-        <ul>
-            {libraryList?.map((book, index) => {
-                return (
-                    <li key={index}>
-                        {book.title} - {book.author}
-                    </li>
-                )
-            })}
-        </ul>
+        <OuterContainer>
+            <ul>
+                {libraryList?.map((book, index) => {
+                    return (
+                        <li key={index}>
+                            {book.title} - {book.author}
+                        </li>
+                    )
+                })}
+            </ul>
+        </OuterContainer>
     );
 };
